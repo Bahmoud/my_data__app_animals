@@ -198,7 +198,7 @@ Choices = st.sidebar.selectbox(
 # mapping categories -> fichiers CSV existants
 csv_files = {
     "Chiens": "coinafrique_chiens.csv",
-    "Moutons": "coinafrique_moutons.csv",
+    "Moutons": "coinfrique_moutons.csv",
     "Poules/Lapins/Pigeons": "coinafrique_poules_lapins_et_pigeons.csv",
     "Autres animaux": "coinafrique_autres_animaux.csv"
 }
@@ -250,3 +250,4 @@ else:
                 '<meta http-equiv="refresh" content="0; url=https://docs.google.com/forms/d/e/1FAIpQLSe3ym_3nI_jWfR6XBWu0Vc2m8ZVW6E8SbDrIsEJwDXpAc945w/viewform?usp=header">',
                 unsafe_allow_html=True
             )
+
