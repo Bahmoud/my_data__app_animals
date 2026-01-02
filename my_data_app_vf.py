@@ -7,6 +7,11 @@ import numpy as np
 import os
 import streamlit.components.v1 as components
 
+st.set_page_config(
+    layout="wide",
+    page_title="Application de données sur les animaux"
+)
+
 #coueleur du sidebar
 st.markdown(
     """
@@ -412,3 +417,4 @@ else:
             """,
             unsafe_allow_html=True
         )
+
