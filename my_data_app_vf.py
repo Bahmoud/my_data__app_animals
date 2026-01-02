@@ -311,16 +311,24 @@ elif Choices == "Tableau de bord":
     if df_raw.empty:
         st.warning("aucun fichier csv valide trouvé pour le tableau de bord")
     else:
-
-        # nettoyage des données
-        df_raw = df_raw.dropna(subset=["prix", "adresse"])  # supprimer lignes vides
+        # nettoyage des données 
+        df_raw = df_raw.dropna(subset=["prix", "adresse"])
+        
+        # nettoyage du prix
         df_raw["prix"] = (
             df_raw["prix"]
             .astype(str)
-            .str.replace(r"[^0-9]", "", regex=True)  # garder seulement les chiffres
+            .str.replace(r"[^\d]", "", regex=True)
         )
+        
         df_raw["prix"] = pd.to_numeric(df_raw["prix"], errors="coerce")
-        df_raw = df_raw[df_raw["prix"] > 0]  # garder prix > 0
+        
+        # suppression des valeurs aberrantes (prix irréalistes)
+        df_raw = df_raw[
+            (df_raw["prix"] > 1_000) & (df_raw["prix"] < 50_000_000)
+        ]
+        
+        # nettoyage des adresses
         df_raw["adresse"] = df_raw["adresse"].astype(str).str.strip().str.title()
 
         # vérifier qu'il reste des données après nettoyage
@@ -416,5 +424,6 @@ else:
             """,
             unsafe_allow_html=True
         )
+
 
 
