@@ -8,8 +8,7 @@ import os
 import streamlit.components.v1 as components
 
 st.set_page_config(
-    layout="wide",
-    page_title="Application de données sur les animaux"
+    layout="wide"
 )
 
 #coueleur du sidebar
@@ -86,7 +85,7 @@ st.markdown(
 
 # titre de l'application
 
-st.markdown("<h1 style='text-align: center; color: black;'>MON APPLICATION DE DONNÉES SUR LES ANIMAUX</h1>", unsafe_allow_html=True)
+st.markdown("<h1 style='text-align: center; color: black;'>APPLICATION DE DONNÉES SUR LES ANIMAUX</h1>", unsafe_allow_html=True)
 
 st.markdown("""
 Cette application effectue le web scraping de données d'animaux sur CoinAfrique sur plusieurs pages.
@@ -417,4 +416,5 @@ else:
             """,
             unsafe_allow_html=True
         )
+
 
