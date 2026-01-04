@@ -5,7 +5,6 @@ from requests import get
 import base64
 import numpy as np
 import os
-import streamlit.components.v1 as components
 
 st.set_page_config(
     layout="wide"
@@ -424,6 +423,7 @@ else:
             """,
             unsafe_allow_html=True
         )
+
 
 
 
